@@ -1,0 +1,186 @@
+/* general */
+:root{
+  --standard-size-board: 16;
+  --case-color: rgb(203, 0, 0);
+  --knob-shadow: rgb(160, 160, 160);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+.app-wrapper{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+/* board */
+
+.etch-a-sketch-case{
+  position: relative;
+  width: 700px;
+  height: 800px;
+  border: 3px solid black;
+  border-radius: 15px 15px 80px 80px;
+  background-color: var(--case-color);
+  box-shadow: 10px 10px 0 rgb(159, 0, 0), inset 6px 6px 0 rgb(255, 255, 255, 0.3);
+}
+
+.knob.left,
+.knob.right{
+  position: absolute;
+  top: 637px;
+  content: '';
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.knob.left{
+  left: -7px;
+  z-index: 10;
+}
+
+.knob.left.bottom{
+  top: 643px;
+  left: 0px;
+  z-index: 1;
+  background-color: var(--knob-shadow);
+}
+
+.knob.right{
+  right: 7px;
+  z-index: 10;
+}
+
+.knob.right.bottom{
+  top: 643px;
+  right: 0px;
+  background-color: var(--knob-shadow);
+  z-index: 1;
+}
+
+.slider-box{
+  position: absolute;
+  left: 50%;
+  top: 700px;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sizeSlider{
+  margin-top: 20px;
+}
+
+.etch-a-sketch-board{
+  width: 500px;
+  height: 500px;
+  margin: 100px auto 0 auto;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: rgb(219, 219, 219);
+  box-shadow: -10px -10px 0 rgb(159, 0, 0), 6px 6px 0 rgb(255, 255, 255, 0.3);
+  border-radius: 20px;
+  gap: 1px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(var(--standard-size-board), 1fr);
+  grid-template-rows: repeat(var(--standard-size-board), 1fr);
+}
+
+.board-cell{
+  background-color: white;
+}
+
+.etch-a-sketch-board>div:hover{
+  background-color: rgb(125, 125, 125);
+}
+
+
+/* Control center */
+
+.control-center{
+  width: 250px;
+  height: 800px;
+  padding: 40px 35px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  background-color: var(--case-color);
+  box-shadow: 10px 10px 0 rgb(159, 0, 0), inset 6px 6px 0 rgb(255, 255, 255, 0.3);
+}
+
+.control-center .button-base{
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  background-color: rgb(160, 160, 160);
+}
+
+.button-base button{
+  position: absolute;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 174px;
+  height: 48px;
+  top: -6px;
+  left: -6px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+#color-picker{
+  width: 100%;
+  height: 48px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: -3px -3px 0 rgb(159, 0, 0), 3px 3px 0 rgb(255, 255, 255, 0.3);
+}
+
+.control-center button:active{
+  box-shadow: 1px 1px 0px 0px rgb(159, 159, 159);
+  transform: translate(3px, 3px);
+}
+/* etch-a-sketch */
+
+
+
+/* background */
+
+.background-board{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1000;
+  display: grid;
+  grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(16,1fr);
+  gap: 1px;
+  background-color: rgb(125, 125, 125);
+}
+
+.background-board div{
+  background-color: #fff;
+}

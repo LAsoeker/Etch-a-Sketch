@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="control-center">
+      <input type="color" id="color-picker">
+      <div class="button-base">
+        <button id="button-color">color</button>
+      </div>
+      <div class="button-base">
+        <button id="button-erase">erase</button>
+      </div>
+      <div class="button-base">
+        <button id="size16" data-size="16">16x16</button>
+      </div>
+      <div class="button-base">
+        <button id="size32" data-size="32">32x32</button>
+      </div>
+      <div class="button-base">
+        <button id="size64" data-size="64">64x64</button>
+      </div>
+      <div class="button-base">
+        <button id="button-reset">reset</button>
+      </div>
+    </div>
+
+    <div class="etch-a-sketch-case">
+      <div class="etch-a-sketch-board"></div>
+      <div class="slider-box">
+        <span class="board-size"></span>
+      </div>
+      <div class="knob left"></div>
+      <div class="knob left bottom"></div>
+      <div class="knob right"></div>
+      <div class="knob right bottom"></div>
+    </div>
+  </div>
+  <div class="background-board"></div>
+</body>
+</html>
